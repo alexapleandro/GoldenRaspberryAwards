@@ -1,0 +1,28 @@
+@import "../../../../scss//variables.scss";
+
+.grid-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 1em;
+	min-height: 92vh;
+	@media (max-width: $screen-sm-max) {
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: row;
+		min-height: auto;
+		.grid-item{
+			padding-right: 1em;
+		}
+	}
+	.grid-item{
+		a{
+			color: #7E758C;
+			text-decoration: none;
+			&.is-active{
+				color: #2EA2E7;
+			}
+		}
+	}
+}

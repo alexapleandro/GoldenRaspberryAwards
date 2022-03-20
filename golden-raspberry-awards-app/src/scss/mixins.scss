@@ -1,0 +1,15 @@
+@use 'sass:list';
+
+@import "./variables.scss";
+
+@mixin grid-items($grid-columns, $grid-columns-smaller-devices) {
+	@for $child-number from 1 through list.length($grid-columns) {
+		$grid-column: list.nth($grid-columns, $child-number);
+		&:nth-child(#{ $child-number }) {
+			grid-column: span $grid-column;
+			@media (max-width: $screen-md-max) {
+				grid-column: span $grid-columns-smaller-devices;
+			}
+		}
+	}
+}

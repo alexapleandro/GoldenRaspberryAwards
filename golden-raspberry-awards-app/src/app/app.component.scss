@@ -1,0 +1,31 @@
+@import "../scss/variables.scss";
+#page {
+	display: grid;
+	grid-template-columns: 12% 1fr 1fr;
+	padding: 0;
+	@media (max-width: $screen-lg-min) {
+		grid-template-columns: 20% 1fr 1fr;
+	}
+}
+
+header {
+	background-color: #343A40;
+	grid-column: 1 / 4;
+	grid-row: 1;
+}
+
+nav {
+	background-color: #F8F9FA;
+	grid-column: 1 / 2;
+	@media (max-width: $screen-sm-max) {
+		grid-column: 1 / 4;
+	}
+}
+
+main {
+	background-color: #FFFFFF;
+	grid-column: 2 / 4;
+	@media (max-width: $screen-sm-max) {
+		grid-column: 1 / 4;
+	}
+}

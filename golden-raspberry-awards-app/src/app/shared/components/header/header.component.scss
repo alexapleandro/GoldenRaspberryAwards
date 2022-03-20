@@ -1,0 +1,12 @@
+@import "../../../../scss/variables.scss";
+.content-header {
+	width: 100vw;
+	@media (max-width: $screen-sm-max) {
+		text-align: center;
+	}
+	h4 {
+		color: #fff;
+		margin: 1em;
+		font-size: 1.1rem;
+	}
+}

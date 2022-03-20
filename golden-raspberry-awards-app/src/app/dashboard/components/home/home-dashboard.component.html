@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <div class="grid-item">
+		<app-year-dashboard [value]="dataYears$"></app-year-dashboard>
+	</div>
+    <div class="grid-item">
+		<app-studio-dashboard [value]="dataStudio$"></app-studio-dashboard>
+	</div>
+    <div class="grid-item">
+		<app-producer-dashboard [value]="dataProducer$"></app-producer-dashboard>
+	</div>
+    <div class="grid-item">
+		<app-movie-dashboard [valueYears]="dataYears$"></app-movie-dashboard>
+	</div>
+</div>
