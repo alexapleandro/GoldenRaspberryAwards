@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+	--color: #646464;
+	--color-light: #89908f;
+	--color-darken: #646464;
+	--color-text: #ffffff;
+	--color-text-light: #52c7b8;
+	--color-text-darken: #00675b;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+@import "scss/variables.scss";

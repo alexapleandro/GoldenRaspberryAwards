@@ -3,14 +3,10 @@ root = true
 
 [*]
 charset = utf-8
-indent_style = space
-indent_size = 2
+indent_brace_style = K&R
+indent_size = 4
+indent_style = tab
 insert_final_newline = true
+max_line_length = 120
+spaces_around_brackets = inside
 trim_trailing_whitespace = true
-
-[*.ts]
-quote_type = single
-
-[*.md]
-max_line_length = off
-trim_trailing_whitespace = false
