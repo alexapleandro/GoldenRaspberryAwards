@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
+
+import { RequestService } from '../shared/services/request.service';
+
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
 import { MovieDashboardComponent } from './components/movie/movie-dashboard.component';
 import { ProducerDashboardComponent } from './components/producer/producer-dashboard.component';
@@ -19,7 +23,11 @@ import { YearDashboardComponent } from './components/year/year-dashboard.compone
 	],
 	imports: [
 		CommonModule,
-		DashboardRoutingModule
+		DashboardRoutingModule,
+		HttpClientModule
+	],
+	providers: [
+		RequestService
 	]
 })
 export class DashboardModule { }

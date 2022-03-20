@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Years } from 'src/app/shared/interfaces/years';
 
 @Component({
-  selector: 'app-year-dashboard',
-  templateUrl: './year-dashboard.component.html',
-  styleUrls: ['./year-dashboard.component.scss']
+	selector: 'app-year-dashboard',
+	templateUrl: './year-dashboard.component.html',
+	styleUrls: ['./year-dashboard.component.scss']
 })
 export class YearDashboardComponent implements OnInit {
 
-  constructor() { }
+	@Input() public value = new Observable<Years>();
 
-  ngOnInit(): void {
-  }
+	constructor() { }
+
+	ngOnInit(): void { }
 
 }

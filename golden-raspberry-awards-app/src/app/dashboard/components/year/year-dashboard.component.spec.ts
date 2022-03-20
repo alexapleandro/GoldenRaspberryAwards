@@ -1,25 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DashboardModule } from '../../dashboard.module';
 
 import { YearDashboardComponent } from './year-dashboard.component';
 
-describe('YearDashboardComponent', () => {
-  let component: YearDashboardComponent;
-  let fixture: ComponentFixture<YearDashboardComponent>;
+describe(YearDashboardComponent.name, () => {
+	let component: YearDashboardComponent;
+	let fixture: ComponentFixture<YearDashboardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ YearDashboardComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [DashboardModule]
+		}).compileComponents();
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(YearDashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(YearDashboardComponent);
+		component = fixture.componentInstance;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
