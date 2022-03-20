@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -24,7 +25,9 @@ import { YearDashboardComponent } from './components/year/year-dashboard.compone
 	imports: [
 		CommonModule,
 		DashboardRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	providers: [
 		RequestService

@@ -1,1 +1,54 @@
-<p>movie-dashboard works!</p>
+<h5>
+	List movie winners by year
+</h5>
+
+<div *ngIf="valueYears | async as value">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+		<div class="grid-container">
+			<div class="grid-item">
+				<div class="form-group">
+					<select formControlName="year" class="form-control">
+						<option>Search by year</option>
+						<ng-template ngFor [ngForOf]="value.years" let-data>
+							<option>{{ data.year }}</option>
+						</ng-template>
+					</select>
+				</div>
+			</div>
+			<div class="grid-item">
+				<button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+					<span class="btn-label"><i class="fa fa-search"></i></span>
+				</button>
+			</div>
+		</div>
+    </form>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Year</th>
+				<th scope="col">Title</th>
+			</tr>
+		</thead>
+		<tbody *ngIf="value$ | async as value">
+			<ng-template ngFor [ngForOf]="value" let-data >
+				<tr>
+					<td>
+						{{ data.id }}
+					</td>
+					<td>
+						{{ data.year }}
+					</td>
+					<td>
+						{{ data.title }}
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+    </table>
+</div>
+
+
