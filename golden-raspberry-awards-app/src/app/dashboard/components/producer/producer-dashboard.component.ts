@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProducerMinMax } from 'src/app/shared/interfaces/producer-min-max';
 
 @Component({
-  selector: 'app-producer-dashboard',
-  templateUrl: './producer-dashboard.component.html',
-  styleUrls: ['./producer-dashboard.component.scss']
+	selector: 'app-producer-dashboard',
+	templateUrl: './producer-dashboard.component.html',
+	styleUrls: ['./producer-dashboard.component.scss']
 })
 export class ProducerDashboardComponent implements OnInit {
 
-  constructor() { }
+	@Input() public value = new Observable<ProducerMinMax>();
 
-  ngOnInit(): void {
-  }
+	constructor() { }
+
+	ngOnInit(): void { }
 
 }
