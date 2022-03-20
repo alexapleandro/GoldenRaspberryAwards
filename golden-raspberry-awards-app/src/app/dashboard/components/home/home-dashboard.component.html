@@ -6,7 +6,7 @@
 		<app-studio-dashboard></app-studio-dashboard>
 	</div>
     <div class="grid-item">
-		<app-producer-dashboard></app-producer-dashboard>
+		<app-producer-dashboard [value]="dataProducer$"></app-producer-dashboard>
 	</div>
     <div class="grid-item">
 		<app-movie-dashboard [valueYears]="dataYears$"></app-movie-dashboard>

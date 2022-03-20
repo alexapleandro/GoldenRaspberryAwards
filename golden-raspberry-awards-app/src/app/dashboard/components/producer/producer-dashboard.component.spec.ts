@@ -1,25 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { DashboardModule } from '../../dashboard.module';
+
 import { ProducerDashboardComponent } from './producer-dashboard.component';
 
-describe('ProducerDashboardComponent', () => {
-  let component: ProducerDashboardComponent;
-  let fixture: ComponentFixture<ProducerDashboardComponent>;
+describe(ProducerDashboardComponent.name, () => {
+	let component: ProducerDashboardComponent;
+	let fixture: ComponentFixture<ProducerDashboardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ProducerDashboardComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [DashboardModule]
+		}).compileComponents();
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProducerDashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ProducerDashboardComponent);
+		component = fixture.componentInstance;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
