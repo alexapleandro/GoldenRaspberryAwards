@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 @NgModule({
 	declarations: [
 		HeaderComponent,
 		NavbarComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		PaginationComponent
 	],
 	imports: [
 		CommonModule,
@@ -20,7 +22,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 	exports: [
 		HeaderComponent,
 		NavbarComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		PaginationComponent
 	]
 })
 export class SharedModule { }

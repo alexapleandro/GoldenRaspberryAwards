@@ -1,0 +1,37 @@
+<ng-container>
+	<div class="paginate" *ngIf="paginate.totalElements">
+		<nav aria-label="Page navigation">
+			<ul class="pagination">
+				<li class="page-item btn-paginate">
+					<button class="page-link" [disabled]="paginate.first" (click)="setPage(0)">
+						<i class="fa fa-step-backward"></i>
+					</button>
+				</li>
+				<li class="page-item btn-paginate">
+					<button class="page-link" [disabled]="paginate.first" (click)="setPage(paginate.page - 1)">
+						<i class="fa fa-caret-left"></i>
+					</button>
+				</li>
+				<ng-container *ngFor="let item of [].constructor(paginate.lastPage); let i = index">
+					<li class="page-item"
+						[ngClass]="{'item-paginator-active' : paginate.page == ( i )}">
+						<a class="page-link" (click)="setPage(i)">
+							{{ i + 1 }}
+						</a>
+					</li>
+				</ng-container>
+				<li class="page-item btn-paginate">
+					<button class="page-link" [disabled]="paginate.last" (click)="setPage(paginate.page + 1)">
+						<i class="fa fa-caret-right"></i>
+					</button>
+				</li>
+				<li class="page-item btn-paginate">
+					<button class="page-link" [disabled]="paginate.last" (click)="setPage(paginate.lastPage - 1)">
+						<i class="fa fa-step-forward"></i>
+					</button>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</ng-container>
+
