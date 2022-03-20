@@ -1,1 +1,25 @@
-<p>studio-dashboard works!</p>
+<h5>
+	Top 3 studios with winners
+</h5>
+<div class="table-responsive" *ngIf="value | async as value">
+    <table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Win Count</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-template ngFor [ngForOf]="value.studios" let-data >
+				<tr>
+					<td>
+						{{ data.name }}
+					</td>
+					<td>
+						{{ data.winCount }}
+					</td>
+				</tr>
+			</ng-template>
+		</tbody>
+    </table>
+</div>
