@@ -1,25 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MovieModule } from '../../movie.module';
+
 import { HomeMovieComponent } from './home-movie.component';
 
-describe('HomeMovieComponent', () => {
-  let component: HomeMovieComponent;
-  let fixture: ComponentFixture<HomeMovieComponent>;
+describe(HomeMovieComponent.name, () => {
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ HomeMovieComponent ]
-    })
-    .compileComponents();
-  });
+	let component: HomeMovieComponent;
+	let fixture: ComponentFixture<HomeMovieComponent>;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeMovieComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [MovieModule],
+		}).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture = TestBed.createComponent(HomeMovieComponent);
+		component = fixture.componentInstance;
+
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
+

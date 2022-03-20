@@ -1,1 +1,78 @@
-<p>home-movie works!</p>
+<div class="grid-container">
+    <div class="grid-item">
+		<h5>
+			List movies
+		</h5>
+
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<div class="header-table">
+								<span>ID</span>
+							</div>
+						</th>
+						<th>
+							<div class="header-table">
+								<span>Year</span>
+								<select class="form-control" [(ngModel)]="selectedYear" (ngModelChange)="this.searchMovies(true)">
+									<option *ngFor="let year of optionsYears" [ngValue]="year">
+										{{ year }}
+									</option>
+								</select>
+							</div>
+						</th>
+						<th>
+							<div class="header-table">
+								<span>Title</span>
+							</div>
+						</th>
+						<th>
+							<div class="header-table">
+								<span>Winner?</span>
+								<select class="form-control" [(ngModel)]="valueWinner" (ngModelChange)="searchMovies(true)">
+									<option *ngFor="let option of optionsWinner" [value]="option.value">
+										{{option.label}}
+									</option>
+								</select>
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody *ngIf="(value$ | async) as value">
+					<ng-template ngFor [ngForOf]="value.content" let-data >
+						<tr>
+							<td>
+								{{ data.id }}
+							</td>
+							<td>
+								{{ data.year }}
+							</td>
+							<td>
+								{{ data.title }}
+							</td>
+							<td>
+								{{ (data.winner) ? 'Yes' : 'No'  }}
+							</td>
+						</tr>
+					</ng-template>
+					<tr>
+						<td colspan="4" *ngIf="!value.content.length">
+							Empty list.
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4">
+							<app-pagination [paginate]="paginate" (selectPage)="searchMovies()"></app-pagination>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
+
+
